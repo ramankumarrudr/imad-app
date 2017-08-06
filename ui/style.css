@@ -8,7 +8,9 @@ body {
     text-align: center;
     color:#ffffff;
 }
-
+.p{
+    color:#ffffff;
+}
 .text-big {
     font-size: 300%;
 }
