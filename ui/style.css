@@ -1,6 +1,6 @@
 body {
     font-family: sans-serif;
-    background-color:#C0C0C0;
+    background-color:	#000000;
     margin-top: 75px;
 }
 
@@ -10,6 +10,10 @@ body {
 
 .text-big {
     font-size: 300%;
+}
+h2
+{
+    font-color:#ffffff;
 }
 
 .bold {
