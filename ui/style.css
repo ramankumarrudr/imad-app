@@ -6,14 +6,11 @@ body {
 
 .center {
     text-align: center;
+    color:#ffffff;
 }
 
 .text-big {
     font-size: 300%;
-}
-h2
-{
-    color:#ffffff;
 }
 
 .bold {
