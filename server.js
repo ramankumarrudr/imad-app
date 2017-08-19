@@ -7,13 +7,13 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var atrticleOne= {
+var articleOne= {
     title:'Article-One',
     heading:'Article-One',
     date: 'aug 19,2017',
     content:` <p>
         Transport Layer Security (TLS) and its predecessor, Secure Sockets Layer (SSL), both frequently referred to as "SSL", are cryptographic protocols that provide communications security over a computer network.[1] Several versions of the protocols find widespread use in applications such as web browsing, email, Internet faxing, instant messaging, and voice-over-IP (VoIP). Websites are able to use TLS to secure all communications between their servers and web browsers.
-        </p>`,
+        </p>`
 };
 function createTemplate (data){
     
