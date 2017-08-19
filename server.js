@@ -6,14 +6,25 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-
-var articleOne= {
+var articles = {
+var 'article-One': {
     title:'Article-One',
     heading:'Article-One',
     date: 'aug 19,2017',
+    head1: 'SSl',
     content:` <p>
         Transport Layer Security (TLS) and its predecessor, Secure Sockets Layer (SSL), both frequently referred to as "SSL", are cryptographic protocols that provide communications security over a computer network.[1] Several versions of the protocols find widespread use in applications such as web browsing, email, Internet faxing, instant messaging, and voice-over-IP (VoIP). Websites are able to use TLS to secure all communications between their servers and web browsers.
         </p>`
+},
+var 'article-Two':{
+       title:'Article-Twe',
+    heading:'Article-Twoe',
+    date: 'aug 19,2017',
+    head1: 'HTTPS',
+    content:` <p>
+         HTTPS (also called HTTP over Transport Layer Security (TLS),[1] HTTP over SSL,[2] and HTTP Secure[3][4]) is a communications protocol for secure communication over a computer network which is widely used on the Internet. HTTPS consists of communication over Hypertext Transfer Protocol (HTTP) within a connection encrypted by Transport Layer Security, or its predecessor, Secure Sockets Layer. The main motivation for HTTPS is authentication of the visited website and protection of the privacy and integrity of the exchanged data.
+        </p>`
+},
 };
 function createTemplate (data){
     
@@ -39,26 +50,25 @@ var htmlTemplate = `<html>
         <div>
         ${date}
         </div>
-            <h4>SSL</h4>
+            <h4>${head1}</h4>
        ${content}
         </div>
     </body>
 </html>
 `;
 return htmlTemplate;
-}
-
+};
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/article-one',function(req,res){
-    res.send(createTemplate(articleOne));
+app.get('/:articleName',function(req,res){
+     //articleName== article-one
+     //articles[articleName]== content object for article one
+     var articleName=req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article-two',function(req,res){
-    res.sendFile(path.join(__dirname,'ui','article-two.html'));
-});
 
 app.get('/article-three',function(req,res){
     res.sendFile(path.join(__dirname,'ui','article-three.html'));
