@@ -1,6 +1,8 @@
-var express = require('express');
-var morgan = require('morgan');
+//<sowtwear packages>
+var express = require('express');//to ceate webserver
+var morgan = require('morgan');//to help us output logs of the server
 var path = require('path');
+//</sowtwear packages>
 
 var app = express();
 app.use(morgan('combined'));
