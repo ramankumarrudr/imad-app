@@ -3,10 +3,10 @@ console.log('Loaded!');
 var element = document.getElementById('main-text');
 element.innerHtml = 'New value';
 //move the image
-var img=document.getElementById('madi')
-img.onclick = function(){
-    img.style.marginLeft = '100px';
-}
+//var img=document.getElementById('madi')
+//img.onclick = function(){
+  //  img.style.marginLeft = '100px';
+//}
 //move image for every 50 ms
 var img=document.getElementById('madi')
 var marginLeft=0;
