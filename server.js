@@ -7,11 +7,53 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var atrticleOne= {
+    title:'Article-One',
+    heading:'Article-One',
+    date: 'aug 19,2017',
+    content:` <p>
+        Transport Layer Security (TLS) and its predecessor, Secure Sockets Layer (SSL), both frequently referred to as "SSL", are cryptographic protocols that provide communications security over a computer network.[1] Several versions of the protocols find widespread use in applications such as web browsing, email, Internet faxing, instant messaging, and voice-over-IP (VoIP). Websites are able to use TLS to secure all communications between their servers and web browsers.
+        </p>`,
+};
+function createTemplate (data){
+    
+    var title = data.title;
+    var date = data.date;
+    var heading=data.heading;
+    var content=data.content;
+
+var htmlTemplet = `<html>
+    <head>
+        <title>
+            ${title}
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="/ui/style.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="container">
+        <a href="/">Home</a>
+        <hr/>
+        <h3>${heading}</h3>
+        <div>
+        ${date}
+        </div>
+            <h4>SSL</h4>
+       ${content}
+        </div>
+    </body>
+</html>
+`;
+return htmlTemplate;
+}
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/article-one',function(req,res){
-    res.sendFile(path.join(__dirname,'ui','article-one.html'));
+    res.send(createTemplete(articleOne));
 });
 
 app.get('/article-two',function(req,res){
