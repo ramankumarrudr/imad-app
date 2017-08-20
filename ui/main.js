@@ -63,5 +63,5 @@ for (var i=0; i,names.length;i++){
 }
 //inserting html into unodered list
 var ul = doument.getElementById('namelist');
-ui.innerHTML = list;
+ul.innerHTML = list;
 };
