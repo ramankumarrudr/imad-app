@@ -56,7 +56,15 @@ submit.onclick = function(){
 //Make a request to the server and send the name
 
 //Capture a list of names and render it as a list
-var names =['name1','name2','name3','name4'];
+ var request = new XMLHttpRequest();
+   //capture the response
+   request.onreadystatechange = function() {
+   if(request.readyState === XMLHttpRequest.DONE){
+       //take some action
+       if (request.status===200){
+           // capture the request and render
+        var names = request.responseText;
+        names=JSON.parse(names);
 var list = '';
 for (var i=0; i<names.length;i++){
     list += '<li>' +names[i]+ '</li>';
@@ -64,4 +72,12 @@ for (var i=0; i<names.length;i++){
 //inserting html into unodered list
 var ul = doument.getElementById('namelist');
 ul.innerHTML = list;
+       }
+   } 
+   };
+   //AJAX CALL
+   // make the request
+   request.open('GET','http://ramankumarrudr.imad.hasura-app.io/submit-name/name='+ name,true);
+   request.send(null);
+
 };
