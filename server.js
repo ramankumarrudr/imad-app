@@ -54,7 +54,7 @@ app.get('/counter',function(req,res){
     counter=counter+1;
     res.send(counter.toString());
 });
-var names[]
+var names[];
 app.get('/submit-name/:name',function(req,res){
 //Get the names from the request
 var name = req.params.name;
