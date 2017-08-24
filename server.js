@@ -67,6 +67,9 @@ res.send(JSON.stringify(names));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'R.M.K_student_login', 'stud_index.html'));
+});
 app.get('/article-one',function(req,res){
     res.send(createTemplate(articleOne));
 });
