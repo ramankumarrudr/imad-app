@@ -63,6 +63,10 @@ names.push(name);
 //JASON-JavaScript objects Notation (way of converting js objects into string)
 res.send(JSON.stringify(names));
 });
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'R.M.K_student_login', 'stud_index.html'));
+});
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
