@@ -64,8 +64,8 @@ names.push(name);
 res.send(JSON.stringify(names));
 });
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+app.get('/databaseproject_1', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'databaseproject_1.html'));
 });
 
 
