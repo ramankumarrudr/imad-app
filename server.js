@@ -92,8 +92,19 @@ app.get('/test-db', function (req, res) {
     });
 });
 
-app.get('/article-one',function(req,res){
-    res.send(createTemplate(articleOne));
+app.get('/articles/article-one',function(req,res){
+    pool.query("SELECT*FROM article WHERE title= "+ req.params.article-one, function(err,result){
+         if(err){
+         res.status(500).send(err.toString());
+     } else{
+      if(err){ res.status(404).send('Article Not Found');
+          
+      }else{
+          var articleData = result.rows[0];
+          res.send(createTemplate(articleOne));
+      }
+     }
+    });
 });
 
 app.get('/article-two',function(req,res){
