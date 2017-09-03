@@ -92,7 +92,7 @@ app.get('/test-db', function (req, res) {
     });
 });
 
-app.get('/article/article-one',function(req,res){
+app.get('/article-one',function(req,res){
     pool.query("SELECT*FROM article WHERE title= "+ req.params.article-one, function(err,result){
          if(err){
          res.status(500).send(err.toString());
